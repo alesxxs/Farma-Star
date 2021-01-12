@@ -1,7 +1,9 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useState, useContext, useEffect, Fragment} from 'react';
 import { Link } from 'react-router-dom';
 import AlertaContext from '../../context/alertas/alertaContext';
 import AuthContext from '../../context/autenticacion/authContext';
+import PrimerBarra from '../layout/PrimerBarra';
+import HeaderHome from '../layout/HeaderHome';
 
 const Registro = (props) => {
 
@@ -82,91 +84,98 @@ const Registro = (props) => {
 
    
     return ( 
-        <div className="form-usuario">
-            { alerta ? ( <div className={`alerta ${alerta.categoria}`}>{alerta.msg} </div>) : null}
-            <div className="contenedor-form sombra-dark">
-                <h1>Registro</h1>
+        <Fragment>
 
-                <form
-                    onSubmit={onSubmit}
-                >
+            <PrimerBarra />
 
-                    <div className="campo-forma">
-                        
-                        <input 
-                            type="text"
-                            id="nombre"
-                            name="nombre"
-                            value={nombre}
-                            placeholder="Nombre(s)"
-                            onChange={onChange}
-                        />
+            <HeaderHome />
+
+            <div className="form-usuario">
+                { alerta ? ( <div className={`alerta ${alerta.categoria}`}>{alerta.msg} </div>) : null}
+                <div className="contenedor-form sombra-dark">
+                    <h1>Registro</h1>
+
+                    <form
+                        onSubmit={onSubmit}
+                    >
+
+                        <div className="campo-forma">
+                            
+                            <input 
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                value={nombre}
+                                placeholder="Nombre(s)"
+                                onChange={onChange}
+                            />
+                        </div>
+
+                        <div className="campo-forma">
+                            
+                            <input 
+                                type="text"
+                                id="apellido"
+                                name="apellido"
+                                value={apellido}
+                                placeholder="Apellido(s)"
+                                onChange={onChange}
+                            />
+                        </div>
+
+                        <div className="campo-forma">
+                            
+                            <input 
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={email}
+                                placeholder="Correo Electrónico"
+                                onChange={onChange}
+                            />
+                        </div>
+
+
+                        <div className="campo-forma">
+                            
+                            <input 
+                                type="password"
+                                id="password"
+                                name="password"
+                                value={password}
+                                placeholder="Contraseña (12 caracteres mínimo)"
+                                onChange={onChange}
+                            />
+                        </div>    
+
+
+                        <div className="campo-forma uno">
+                            
+                            <input 
+                                type="password"
+                                id="confirmar"
+                                name="confirmar"
+                                value={confirmar}
+                                placeholder="Repite tu Contraseña"
+                                onChange={onChange}
+                            />
+                        </div>
+
+                        <div className="gg">
+                            <button type="submit" className="btn btn-primario btn-block ggInput"><p>Registrarse</p></button>
+                        </div>
+                    </form>
+
+                    <div className="cuenta">
+                        <p>¿Tienes Cuenta?</p>
+                        <Link to={'/login'} className="enlace-cuenta">
+                            <p>Inicia Sesión</p>
+                        </Link>
                     </div>
-
-                    <div className="campo-forma">
-                        
-                        <input 
-                            type="text"
-                            id="apellido"
-                            name="apellido"
-                            value={apellido}
-                            placeholder="Apellido(s)"
-                            onChange={onChange}
-                        />
-                    </div>
-
-                    <div className="campo-forma">
-                        
-                        <input 
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={email}
-                            placeholder="Correo Electrónico"
-                            onChange={onChange}
-                        />
-                    </div>
-
-
-                    <div className="campo-forma">
-                        
-                        <input 
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={password}
-                            placeholder="Contraseña (12 caracteres mínimo)"
-                            onChange={onChange}
-                        />
-                    </div>    
-
-
-                    <div className="campo-forma uno">
-                        
-                        <input 
-                            type="password"
-                            id="confirmar"
-                            name="confirmar"
-                            value={confirmar}
-                            placeholder="Repite tu Contraseña"
-                            onChange={onChange}
-                        />
-                    </div>
-
-                    <div className="gg">
-                        <button type="submit" className="btn btn-primario btn-block ggInput"><p>Registrarse</p></button>
-                    </div>
-                </form>
-
-                <div className="cuenta">
-                    <p>¿Tienes Cuenta?</p>
-                    <Link to={'/login'} className="enlace-cuenta">
-                        <p>Inicia Sesión</p>
-                    </Link>
+                    
                 </div>
-                
             </div>
-        </div>
+        </Fragment>
      );
 }
  

@@ -8,7 +8,7 @@ const HeaderHome = () => {
         
                 <nav className="navbar navbar-expand-lg  barra">
                     <div className="container">
-                        <span className="logo navbar-brand" href="/"><h1>Farma-Star</h1></span>
+                        <a href="/"><span className="logo navbar-brand"><h1>Farma-Star</h1></span></a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                         </button>

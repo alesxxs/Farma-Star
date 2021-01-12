@@ -1,7 +1,9 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useState, useContext, useEffect, Fragment} from 'react';
 import { Link } from 'react-router-dom';
 import AlertaContext from '../../context/alertas/alertaContext';
 import AuthContext from '../../context/autenticacion/authContext';
+import PrimerBarra from '../layout/PrimerBarra';
+import HeaderHome from '../layout/HeaderHome';
 
 const Login = (props) => {
 
@@ -57,56 +59,63 @@ const Login = (props) => {
 
    
     return ( 
-        <div className="form-usuario">
+        <Fragment>
 
-            { alerta ? ( <div className={`alerta ${alerta.categoria}`}>{alerta.msg} </div>) : null}
+            <PrimerBarra />
 
-            <div className="contenedor-form sombra-dark">
-                <h1>Iniciar Sesión</h1>
+            <HeaderHome />
 
-                <form
-                    onSubmit={onSubmit}
-                >
+            <div className="form-usuario">
 
-                    <div className="campo-forma">
-                        
-                        <input 
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={email}
-                            placeholder="Correo Electrónico"
-                            onChange={onChange}
-                        />
-                    </div>
+                { alerta ? ( <div className={`alerta ${alerta.categoria}`}>{alerta.msg} </div>) : null}
 
-                    <div className="campo-forma ggg uno dos">
-                        
-                        <input 
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={password}
-                            placeholder="Contraseña"
-                            onChange={onChange}
+                <div className="contenedor-form sombra-dark">
+                    <h1>Iniciar Sesión</h1>
+
+                    <form
+                        onSubmit={onSubmit}
+                    >
+
+                        <div className="campo-forma">
                             
-                        />
-                    </div>
+                            <input 
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={email}
+                                placeholder="Correo Electrónico"
+                                onChange={onChange}
+                            />
+                        </div>
 
-                    <div className="gg">
-                        <button type="submit" className="btn btn-primario btn-block ggInput"><p>Iniciar Sesión</p></button>
-                    </div>
-                </form>
+                        <div className="campo-forma ggg uno dos">
+                            
+                            <input 
+                                type="password"
+                                id="password"
+                                name="password"
+                                value={password}
+                                placeholder="Contraseña"
+                                onChange={onChange}
+                                
+                            />
+                        </div>
 
-                <div className="cuenta">
-                    <p>¿Aún no tienes cuenta?</p>
-                    <Link to={'/registro'} className="enlace-cuenta">
-                        <p>Crear Cuenta</p>
-                    </Link>
+                        <div className="gg">
+                            <button type="submit" className="btn btn-primario btn-block ggInput"><p>Iniciar Sesión</p></button>
+                        </div>
+                    </form>
+
+                    <div className="cuenta">
+                        <p>¿Aún no tienes cuenta?</p>
+                        <Link to={'/registro'} className="enlace-cuenta">
+                            <p>Crear Cuenta</p>
+                        </Link>
+                    </div>
+                    
                 </div>
-                
             </div>
-        </div>
+        </Fragment>
      );
 }
  

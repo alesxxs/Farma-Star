@@ -6,6 +6,7 @@ import Carrusel from '../layout/Carrusel';
 import BarraEnvios from '../layout/BarraEnvios';
 import ProductosHome from '../layout/ProductosHome';
 import Mapa from '../layout/Mapa';
+import Consultas from '../layout/Consultas';
 
 
 const Home = () => {
@@ -25,6 +26,8 @@ const Home = () => {
             <ProductosHome />
 
             <Mapa />
+
+            <Consultas />
 
             
             

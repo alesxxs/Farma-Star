@@ -330,8 +330,8 @@ padding-top: 20px;
 
 .alerta {
   position: fixed;
-  top: 0;
-  left: 0;
+  margin-top: 10rem;
+  
   padding: 1rem 3rem;
   border-radius: 1rem;
   font-family: var(--headingFont);
@@ -340,6 +340,7 @@ padding-top: 20px;
   font-size: 2.2rem;
   text-align: center;
   width: 100%;
+  
 }
 @media (min-width:768px) {
   .alerta {
@@ -370,6 +371,7 @@ padding-top: 20px;
     min-height: 81px;
 }
 
+
 .logo h1{
     font-family: 'Fugaz One', cursive;
     font-size: 30px;
@@ -396,6 +398,8 @@ padding-top: 20px;
 
 .barra {
   background-color: #0c7ac9 !important;
+
+  
   
 }
 
@@ -479,4 +483,63 @@ padding-top: 20px;
   padding-bottom: 1px;
   text-transform: uppercase;
 }
+
+
+.leaflet-container {
+  width: 100%;
+  height: 70vh;
+  
+}
+
+.mapa {
+  background-color: #0c7ac9;
+  height: 100vh;
+  display: grid
+}
+
+.conf-mapa{
+  width: 75%;
+  height: 71vh;
+  border: 5px solid #42b0ff;
+  border-radius: 4px;
+  margin: 10rem auto;
+  margin-bottom: 5rem;
+}
+
+.mapa-tiendas {
+  margin-top: 5rem !important;
+}
+
+.mapa-tiendas h1 {
+  font-weight: bold;
+  color: white;
+  font-size: 45px;
+}
+
+
+.mi-consulta {
+  background-color: #00508b;
+  width: 100%;
+  margin-top: 15rem;
+  height: 25rem;
+  border-radius: 5px;
+  margin-bottom: 15rem;
+}
+
+.texto-consulta {
+  color: white;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  
+}
+
+.texto-consulta h1 {
+  font-weight: bold;
+}
+
+.logotipo img {
+  width: 5%;
+}
+
+
 
